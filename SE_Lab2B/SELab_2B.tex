@@ -1,0 +1,86 @@
+\documentclass[12pt]{article}
+\usepackage[margin=60pt]{geometry}
+\usepackage{graphicx}
+\graphicspath{/home/sibusiso/Desktop/.Login Page.PNG}
+%Gummi|065|=)
+\title{\textbf{SOFTWARE ENGINEERING LAB \\EXERCISE NO 2B\\}}
+\author{\Large Sibusiso Mgidi 1141573\\
+		\Large Ndivho Mamathuba 1053903\\
+		\Large Culu Muzikawufani 1105477\\	
+		\Large Siala Mbofholowo 1367404\\
+		\Large Rufus Seopa 1038973\\
+		}
+
+\date{\textbf{\Large 10 September 2018}}
+\begin{document}
+\linespread{1.5}
+\maketitle{\textbf{\Large Prime Number Report}}
+\newpage
+\section{Runtime Test Cases(Scenarios):}
+\subsection{Unit Testing}
+Unit testing is a software development process in which the smallest testable parts of an application, called units, are individually and independently scrutinized for proper operation. Unit testing can be done manually but is often automated.\\
+\\
+\textbf {Case 1 : Computing the first 10 prime numbers} \\
+Input tested : 50\\
+Expected Output: [2,3,5,7,11,13,17,19,23,29,31,37,41,43,47]\\
+Comment : The testProg executes successfully and pass the test.\\
+\\
+\textbf {Case 2: Computing the zero prime number }\\
+Input tested : 0 \\
+Expected Output: raise an exception \\
+Comment : testProg raise an exception “Please enter a positive integer”.\\
+\\
+\textbf {Case 3: Computing one}\\
+Input tested : 1\\
+Expected Output: raise an exception\\
+Comment : testProg raise an exception “Invalid input, input should be an integer greater than one to produce the prime number”.\\
+\\
+\textbf {Case 4: Testing a negative number}\\
+Input tested : -10\\
+Expected Output: raise an exception\\
+Comment : testProgr raise an exception “ Please enter a positive number”.\\
+\\
+\textbf {Case 5: Testing the string }\\
+Input tested : “hello”\\
+Expected Output: Type Error\\
+\\
+\textbf {Case 6: Testing a null value}\\
+Input tested : None\\
+Expected Output: Type Error\\
+
+\section{Integration Testing} 
+Intergration testing is a level of software testing where individual units are combined and tested as a
+group.\\
+The main function or goal of this testing is to test the interfaces between the units/modules.\\
+We normally do Integration testing after “Unit testing”. Once all the individual units are created and
+tested, we start combining those “Unit Tested” modules and start doing the integrated testing.\\
+The individual modules are first tested in isolation. Once the modules are unit tested, they are integrated
+one by one, till all the modules are integrated, to check the combinational behavior, and validate whether
+the requirements are implemented correctly or not.\\
+In our program we cannot perform Intergration testing since we only one function/module.
+
+\section {System Testing} 
+System testing is the testing of a complete and fully integrated software product.
+System Testing is actually a series of different tests whose sole purpose is to exercise the full computer
+based system.\\
+System testing is concerned with testing an entire system based on its specifications.\\
+\\
+It supports the derivation of functional system test requirements and then transformed into test cases, test
+oracles.\\
+In order to perform System Testing we should have done the Unit testing first and secondly the
+integration testing stated above.\\
+\\
+\textbf{System Testing involves testing the software code for following}
+\begin{itemize}
+  \item Testing the fully integrated applications.
+  \item Verify thorough testing of every input in the application to check for desired outputs.
+  \item Testing of the user's experience with the application
+\end{itemize}
+
+\section{What modification of parameter ??}
+- Instead of having four parameters we are going to have one parameter (x) whose prime numbers are
+required and are used for testing.\\
+- Prime [] and N are also not passed as parameters but they are declared globally for them to be accessed everywhere.
+
+
+\end{document}
