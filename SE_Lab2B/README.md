@@ -4,6 +4,7 @@
 ## Problem Description
 * The program takes a range and prints prime numbers in that range using Sieve of
 Eratosthenes.
+[![Erathostene example](https://upload.wikimedia.org/wikipedia/commons/b/b9/Sieve_of_Eratosthenes_animation.gif)](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)
 
 ## Problem Solution
 * Take the value of n from the user.
