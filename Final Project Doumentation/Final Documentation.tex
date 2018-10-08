@@ -1,0 +1,334 @@
+\documentclass[12pt]{article}
+\usepackage[margin=60pt]{geometry}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{sectsty}
+\usepackage{wrapfig}
+\usepackage{subcaption}
+
+\sectionfont{\color{cyan}}
+\subsectionfont{\color{cyan}}
+\subsubsectionfont{\color{cyan}}
+
+\title{\textbf{SOFTWARE ENGINEERING\\ DOCUMENTATION \\Title: Fast Food on Wheels Delivery System}}
+
+
+\author{\Large Sibusiso Mgidi 1141573\\
+		\Large Ndivho Mamathuba 1053903\\
+		\Large Culu Muzikawufani 1105477\\	
+		\Large Siala Mbofholowo 1367404\\
+		\Large Rufus Seopa 1038973\\
+}
+
+\date{\textbf{\Large 08 October 2018}}
+\begin{document}
+\linespread{1.5}
+\maketitle{\textbf{\Large }}
+\newpage
+\tableofcontents
+\newpage
+\section{Introduction}
+
+\subsection{Purpose}
+The purpose of this document is to give general description about the fast food (Food Deli) delivery software management system running on cloud computing service. The purpose of Food deli is to allow the customers to make orders online with an option for their orders to be delivered.
+
+\subsection{Scope}
+The Food deli is the software application which allows enables the customers to make orders online and other specification like selecting an item from the menu, choosing the the location where their food food has to be delivered and more.\\
+\\
+The restaurant manager can interact with the system to manage the stock inventory, orders,customer database,financial administration, duties using the software application portal. An administrator also uses the software application portal in order to administer the system and keep the information accurate in the database. The administrator can, for einstance , verify restaurant owners,setting back-ups of database, generating system maintenance and manager customer information.\\
+\\
+Furthermore, the software application (Food deli) needs internet and GPS connection to fetch and display results. All system information is smainwtaned in a database(Firebase) located on the web-serever. The application also has the capability of capturing the location on which the users would like their order to be delivered.  
+
+\subsection{Problem statement / definition}
+The lack of the system that enables the custeomerS to make multiple orders and schedule delivery of all orders in real time. The goal of the project is to develop a system that will allow the customer to make multiple orders using possible devices such as laptop, mobile-devices, tablets and desktop application. The system will be used by the actors namely: customer/client, restauraant manager and the system administrator who is responsible for managing the software used by the end-users. 
+
+
+\subsection{Definition, Acronymns, and Abbreviations}
+\begin{itemize}
+	\item Food deli - It's mobile application
+	\item System Administrator - Responsible for managing the software used by the end-users
+	\item Restaurant Manager - Managers everything in the restaurant restaurant this includes food supplies, stock inventory, employee duties, financial administration and general report.
+	\item Customer - A person who is going to use the Food deli to order food.
+	\item Android Studio - Is the official integrated Development Environment(IDE) for Android app development, based on IntelliJ IDEA.
+	\item Java - Is a general-purpose computer-programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible.
+	\item XML - A metalanguage which allows users to define their own customized markup languages, especially in order to display documents on the internet.
+	\item JSON - (JavaScript Object Notation) is a lightweight data-interchange format. It is easy for humans to read and write.
+\end{itemize}
+
+\subsection{Back End and Front End Tasks}
+ Sibusiso Mgidi - Front End and Back End\\
+ Culu Muzikawufani - Front End\\
+ Siala Mbofholowo - Back End\\
+ Ndivho Mamathuba - Back End\\
+ Rufus Seopa - Front End and Back End
+
+\subsection{Overview}
+This document includes detailed information about requirements, problem statement/definition, software requirement specification, project's design and architecture document, sprint planning document, description and demostration of some relevant modules, sprint retrospective, software and hardware requirements and other needed elements of the project.
+\section{Overall description}
+This section will give an overview of the whole system. The system will be explained in its context to show how the system interacts with other systems and introduce the basic functionality of it. It will also describe what type of stakeholders that will use the system and what functinality is available for each type. At last the constraints and assumptions for the system will be presented.
+\subsection{Product perspective}
+This system will consist of two parts: one mobile application and database. The mobile application will be used to order food items and view descriptions about the items in the menu and the database(Firebase) will be used to store the users data.
+\\
+The mobile application will need to communicate to the GPS system within the mobile phone, which in turn communicate with the physical GPS device to find the location of the user see the diagram below. The GPS system will provide the mobile application with the locations of both user and he restaurant and the distance between them, but it will also provide maps and functionality to display the application's data on the map. The functionality provided by the GPS system will be embedded into the appliction in order for the user to be able to use the functions in the application in a seamlessly manner.
+
+\includegraphics[width = 0.8\textwidth]{SE.png}
+\\
+Since this is the data-centric product it will need somewhere to store the data. For that, a database called Firebase will be used. The mobile application will communicate with the database. The mobile application will only use the database to get data. All of the database communication will go over the internet.
+
+\subsection{Sequence Diagram}
+A System Sequence Diagram presents sequences for specific use cases and describe interactions between the user and the system in terms of an exchange of messages over time. It shows the details of events that are generated by actors from outside the  The system and gives detail on how operation are carried out. 
+
+\includegraphics[width = 0.8\textwidth]{diagram.png}
+
+\subsection{Architecture Diagram}
+
+
+\includegraphics[width = 0.8\textwidth]{diagram1.png}
+
+\subsubsection{User interfaces}
+A first time user of the mobile application should see the log-in page when he/she opens the application, see the Welcome page.If the user has not registered, he/she should be able to do that on the Register page.\\
+\\
+If the user is not a first-time user, he/she should be able to browse through the list of buttons in the navigation bar namely Profile, Menu, Location and Checkout.\\
+\\
+Every user should have a profile page where the can edit their name, surname and phone number but users cannot edit their email address, see Edit Profile page.\\
+\\
+If the user selects the menu button he/she is taken to the menu page where he/she can add items to the cart, see Select menu page. The user will then select the delivery location where the order will be delivered.\\
+\\
+After the user selects the delivery location he/she will be taken to the payment option where he/she will select the method of payment and receive the confirmation of the processed order.\\
+If the use forgets his/her xeither the password or username he/she will click on the "FORGOT PASSWORD" then an email with the reset password link will sent to the user in order for the password to be reset.
+\newpage
+\begin{figure}[h!]
+	\centering
+	\begin{subfigure}[b]{0.3\linewidth}
+		\includegraphics[width = \textwidth]{welcome.png}
+		\caption{Welcome page}
+		\vspace{1cm}
+		\hspace{2cm}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.3\linewidth}
+		\includegraphics[width = \textwidth]{register.png}
+		\caption{Register page}
+		\vspace{1cm}
+		\hspace{2cm}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.3\linewidth}
+		\includegraphics[width = \textwidth]{main.png}
+		\caption{Main page}
+		\vspace{1cm}
+		\hspace{2cm}
+	\end{subfigure}
+
+	\centering
+	\begin{subfigure}[b]{0.3\linewidth}
+		\includegraphics[width = \textwidth]{edit.png}
+		\caption{Edit profile page}
+		\vspace{1cm}
+		\hspace{2cm}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.3\linewidth}
+		\includegraphics[width = \textwidth]{menu.png}
+		\caption{Select menu page}
+		\vspace{1cm}
+		\hspace{2cm}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.3\linewidth}
+		\includegraphics[width = \textwidth]{map.png}
+		\caption{Delivery location page}
+		\vspace{1cm}
+		\hspace{2cm}
+	\end{subfigure}
+	
+\end{figure}
+
+\newpage
+
+\begin{figure}[h!]
+	\centering
+	\begin{subfigure}[b]{0.3\linewidth}
+		\includegraphics[width = \textwidth]{paypal2.png}
+		\caption{Method of payment}
+		\vspace{1cm}
+		\hspace{2cm}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.3\linewidth}
+		\includegraphics[width = \textwidth]{paypal.png}
+		\caption{Paypal login}
+		\vspace{1cm}
+		\hspace{2cm}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.3\linewidth}
+		\includegraphics[width = \textwidth]{payment.png}
+		\caption{Payment Panel}
+		\vspace{1cm}
+		\hspace{2cm}
+	\end{subfigure}
+		\begin{subfigure}[b]{0.3\linewidth}
+		\includegraphics[width = \textwidth]{emailconfirm.png}
+		\caption{Email confirmation}
+		\vspace{1cm}
+		\hspace{2cm}
+	\end{subfigure}
+	
+\end{figure}
+\newpage
+\subsubsection{Hardware interfaces}
+ \begin{itemize}
+	\item Minimum requirements: \\
+	Operating System: Android 4.0.0 - 4.0.4 \\
+	Processor: Intel Atom Processor Z2520 1.2 GHz, or faster processor \\
+	Storage : Between 850 MB and 1.2 GB, depending on the language version.\\
+	RAM : Minimum of 512 MB\\
+	Hard Disk : 2 GB of available hard-disk space for installation; extra free space is required during installation 
+
+	\item Recommended Requirements: \\
+	Processor: Intel Core i5 Processor 2.2 GHz, or faster processor \\
+	Storage : Between 1000 MB and 1.2 GB, depending on the language version.\\
+	RAM : 2 GB is recommended\\
+	Hard Disk : 3 GB of available hard-disk space for installation; extra free space is required during installation. 
+ \end{itemize}
+
+\subsubsection{Communications interfaces}
+\begin{itemize}
+	\item Google Map Services: \\
+	Google Map is a web mapping service developed by Google. It offers satellite imagery, street maps and route planning for traveling by foot, car, bicycle or public transportation.\\
+	It is used to find the location of the customer, this helps when delivery the food to customer.
+
+	\item PayPal Services: \\
+	PayPal is an online payment system that supports online money tranfers and serves as an electronic alternative to traditional paper methods like cheques and money orders. \\
+	In the application it is used for payments method.\\
+	
+\end{itemize}
+\subsection{Product functions}
+\subsubsection{Register / sign in-}
+Yes  we have the sign in or register feature. Email address , password and username are needed for registering. When it comes to registering , the customer must create a password of  6 character minimum but 9 characters maximum , the password must contain  at least one Upper case , one low case character , one symbol and one number and also the username should be a minimum of four characters but maximum of 10 characters   but the email address is going to be used as the primary key for all the users. When signing in , only the username and password would be needed. The delivery man is going to be added form the admin panel.
+
+\subsubsection{Profile }
+Both the customer and delivery man are going to have profiles.
+
+\subsubsection{Menu}
+The customer can view the all the menus and pick anything that they want from the Menu , The sum is going to be added together  when they  done picking.
+
+\subsubsection{Pickup} 
+The customer will have to be specify the drop off location then The delivery man is allowed to view the pickup location of the customer.
+
+\subsubsection{Request ride}
+The customer has to enter the destination where he/ she needs the drip off to be at .The Delivery man can either accept or reject the request ride  depending on  how far are they from the pickup location .The Delivery man must come to the customer.
+
+\subsubsection{Push Notifications}
+Both the customer and the delivery man are going to push notifications to each other , for example the delivery man can notify the customer when he has arrived at the drop location and The customer also notify the delivery man to cinfirm if he has arrived at the right location.
+
+\subsubsection{Payment}
+The customer can either choose to pay cash or digital .If the cash option is chosen , the delivery man will accept the cash where both customer and delivery man will sign that the payment went through by using  a payment book. If digital payment is chosen , then the delivery man can withdraw the amount to his bank account.
+
+\subsubsection{Edit Profile}
+The customer  can edit his/her profile anytime .For the delivery man , the editions of his profile is going to be done through the admin panel only.
+
+\subsubsection{Cancel Ride}
+No cancellation of the ride is allowed.
+
+\subsubsection{Logout}
+Both customer and delivery man clog out with just one tap
+
+
+\subsection{User characteristics}
+There are three types of users that interact with the system: users of the mobile application, restaurant manager and system administrator. Each of these three types of users has different use of the system so each of them has their own requirements.\\
+\\
+The moble application users can only use the application to select an item from the menu, add an item to their current order, remove an item from their current menu, provide payment details, view the order placed. If it happens that the actor forgets their login details then the actcor will get the notification to reset their password via email.\\
+\\
+The restaurant manager will use the software application portal instead dof using the software application. There they will manage stock inventory, orders, customer database, generation of reports and more.\\
+\\
+The systems administrator is responsible for all computer related sereviwces such as setting-backups of databases, stopping/restarting system services, general system maintanance, etc
+
+\subsection{Constraints}
+ \begin{itemize}
+	\item Only registered customers and restaurant manager will be authorised to use the software application.
+	\item The software application(Food deli) is only for android users.
+	\item GUI is english.
+	\item Requires internet connection
+ \end{itemize}
+\subsection{Assumptions and dependencies}
+One assumption about the product is that it will always be used on mobile phones that have enough performance. If the phone does not have enough hardware resources available for the application, for example the users might have allocated them with other applications, there may be scenarios where the application does not work as intended or even at all.
+\section{Data Dictionary} 
+
+\subsection{Customer Data Dictionary} 
+Scope : This table contains demographic data of the applicant/customer. The table stores the attributes of the objects belonging to classes named CUSTOMER.\\
+\subsubsection{Customer Attribute Listing}
+ 
+\textbf {customer id:}\\
+Description :  Customer unique identification number generated by the system on an incremental basis\\
+Type : 5 digit integer \\
+Format : ***** \\
+Note : This is the primary key, non-numeric values\\
+
+\textbf {customer username:}\\
+Description :  Customer username name\\
+Type : 30 string character \\
+Format :N/A \\
+Note : Contains non-numeric and special characters. No numeric values\\
+
+\textbf {customer email address:}\\
+Description : Customer electronic mail address.\\
+Type : 30 string character. \\
+Format :Variable Character. \\
+Note : The email will be verified online.\\
+
+\textbf {customer password:}\\
+Description : This is the customer password.\\
+Type : 30 combination of strings and numerics. \\
+Format :Variable Character. \\
+Note : Take the combination of the strings, numerics and special characters\\
+
+\textbf {customer phone number:}\\
+Description : This is the customer phone number.\\
+Type :  10 digit integer. \\
+Format : Numerics\\
+Note : Take the combination of the strings, numerics and special characters
+
+\subsection{Restaurant Manager Data Dictionary} 
+Scope : This table contains the restaurant manager username, password and unique id. The table stores the attributes of the objects belonging to classes named MANAGER.
+\\
+
+\subsubsection{Restaurant Manager Attribute Listing}
+
+\textbf {manager username:}\\
+Description : Manager first name\\
+Type : 30 string character \\
+Format :N/A \\
+Note : Contains non-numeric and special characters. No numeric values\\
+
+\textbf {manager password:}\\
+Description : This is the manager password.\\
+Type : 30 combination of strings and numerics. \\
+Format :Variable Character. \\
+Note : Take the combination of the strings, numerics and special characters\\
+
+\textbf {manager id:}\\
+Description : Manager unique identification number generated by the system on an incremental basis\\
+Type : 5 digit integer \\
+Format : ***** \\
+Note : This is the primary key, non-numeric values
+
+\subsection{Systems Addministrator Data Dictionary} 
+Scope : This table contains the system's administrator username, password and unique id. The table stores the attributes of the objects belonging to classes named SYSTEM ADMINISTRATOR.
+
+\subsubsection{System Administrator Attribute Listing}
+\textbf {administrator username:}\\
+Description : administrator first name\\
+Type : 30 string character \\
+Format :N/A \\
+Note : Contains non-numeric and special characters. No numeric values\\
+
+\textbf {administratdor password:}\\
+Description : This is the manager password.\\
+Type : 30 combination of strings and numerics. \\
+Format :Variable Character. \\
+Note : Take the combination of the strings, numerics and special characters\\
+
+\textbf {administrator id:}\\
+Description : Administrator unique identification number generated by the system on an incremental basis\\
+Type : 5 digit integer \\
+Format : ***** \\
+Note : This is the primary key, non-numeric values
+
+\end{document}
